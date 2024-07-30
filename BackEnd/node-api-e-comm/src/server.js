@@ -1,8 +1,9 @@
 const app =require(".");
+require('dotenv').config();
 const { connectDb } = require("./config/db");
 
-const PORT= 5450;
-app.listen(PORT,async()=>{
+const Port= process.env.PORT || 5450;
+app.listen(Port,async()=>{
     await connectDb();
-    console.log("e-commerce api listing on PORT : ",PORT);
+    console.log("e-commerce api listing on PORT : ",Port);
 })

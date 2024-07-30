@@ -91,7 +91,7 @@ export default function Navigation() {
   }, [auth.user])
   
  const handleUserOrder=()=>{
-  // dispatch(getOrderHistory(userId))
+  dispatch(getOrderHistory())
   navigate("/account/order")
   handleCloseUserMenu()
  }

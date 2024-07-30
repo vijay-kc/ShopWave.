@@ -89,7 +89,7 @@ function LoginForm() {
                         </FormControl>
                     </Grid>
                     <Grid item xs={12}>
-                        {auth.error && <div style={{ color: 'red' }}>{auth.error.response.data.message || auth.error.response.data.error}</div>}
+                        {auth.error && <div style={{ color: 'red' }}>{auth.error?.response?.data?.message || auth.error?.response?.data?.error}</div>}
                     </Grid>
                     <Grid item xs={12} >
                         <Button className='bg-[#9155FD] w-full' type='submit' variant='contained'

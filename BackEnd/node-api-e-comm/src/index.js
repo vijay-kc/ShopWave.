@@ -45,7 +45,3 @@ app.use("/api/payments", paymentRouter)
 
 module.exports=app;
 
-
-//implements update product
-
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjY4OTdlN2I2YTQ0ZWQ4ZjJhYjNhMzYiLCJpYXQiOjE3MTgxMzA2NjMsImV4cCI6MTcxODMwMzQ2M30.x6BnyFoYgTD57qhsO2_I86Xu3XM1n4G3paZcGEUgQ1A

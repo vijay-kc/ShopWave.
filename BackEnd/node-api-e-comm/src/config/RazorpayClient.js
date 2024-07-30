@@ -1,11 +1,9 @@
 const Razorpay =require('razorpay');
-
- RAZORPAY_KEY="rzp_test_DzLNlg1hCTMOBq"
- RAZORPAY_SECRET="xw5qf7ND6Ikoegrh4Xaz3mFv"
+require('dotenv').config();
 
  const razorpay = new Razorpay({
-    key_id: RAZORPAY_KEY,
-    key_secret: RAZORPAY_SECRET
+    key_id: process.env.RAZORPAY_KEY,
+    key_secret: process.env.RAZORPAY_SECRET
 })
 
 

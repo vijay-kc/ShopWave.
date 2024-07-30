@@ -42,11 +42,11 @@ export const getOrderById=(orderId)=> async (dispatch)=>{
 
 
 
-export const getOrderHistory=(userId)=> async (dispatch)=>{
+export const getOrderHistory=()=> async (dispatch)=>{
     dispatch({type:GET_ORDER_HISTORY_REQUEST})
             // console.log("order req",userId);
     try {
-        const {data} =await api.get(`/api/orders/user`,userId)
+        const {data} =await api.get(`/api/orders/user`)
                 // console.log("order data",data);
         dispatch({
             type:GET_ORDER_HISTORY_SUCCESS,

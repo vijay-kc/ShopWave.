@@ -1,0 +1,86 @@
+npm init -y (to start node in this project)
+npm i express (to install express)
+npm i mongoose ( to install mongoose)
+npm i nodemon (to install nodemon)
+npm i cors (to install cors)
+npm i bcrypt ( to install bcrypt)
+npm i dotenv (to install env)
+npm i razorpay (to install  razor pay )
+import express and cors 
+create server 
+make new project on mongodb atlas(user name: vijay_kc,password:NVAmgtnsTDmk0j3C)
+mongodb+srv://vijay_kc:<password>@cluster0.yqmhldx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+create model and schemas
+create user services 
+
+
+
+
+
+
+
+const jwtProvider = require("../config/jwtProvider");
+const userService = require("../services/user.service");
+
+const authenticate = async (req, res, next) => {
+    try {
+        const token = req.headers.authorization?.split(" ")[1];
+        if (!token) {
+            return res.status(404).send({ error: "Token not found..." });
+        }
+
+        const userId = jwtProvider.getUserIdFromToken(token);
+        const user = await userService.findUserById(userId);
+
+        if (!user) {
+            return res.status(404).send({ error: "User not found..." });
+        }
+
+        req.user = user;
+        next();
+    } catch (error) {
+        return res.status(500).send({ error: error.message });
+    }
+};
+
+module.exports = { authenticate };
+
+
+async function findUserCart(user){
+
+    try{
+       // Find the cart for the user
+       let cart = await Cart.findOne({ user: user });
+ 
+       // Find cart items based on the cart's _id
+       let cartItems = await Cart.find({ cart: cart._id });
+ 
+       // Assign the found cartItems to cart.cartItems
+       cart.cartItems = cartItems;
+       
+       // Initialize total prices and total items
+       let totalPrice = 0;
+       let totalDiscountedPrice = 0;
+       let totalItem = 0;
+ 
+       // Calculate total prices and total items
+       for(let cartItem of cart.cartItems){
+          totalPrice += cartItem.price;
+          totalDiscountedPrice += cartItem.discountedPrice;
+          totalItem += cartItem.quantity;
+       }
+ 
+       // Assign the calculated totals to cart properties
+       cart.totalPrice = totalPrice;
+       cart.totalItem = totalItem;
+       cart.totalDiscountedPrice = totalDiscountedPrice;
+ 
+       // Return the cart object
+       return cart;
+ 
+    } catch(error){
+       // Throw an error if any occurs
+       throw new Error(error.message);
+    }
+ }
+ 

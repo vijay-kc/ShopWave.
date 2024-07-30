@@ -1,0 +1,21 @@
+/* group-hover:h-[13.3rem] group-hover:w-[10.3rem] */
+/* .homeSectionCard */
+
+.img{
+    transition: transform .3s ease-out;
+}
+.img:hover{
+    transform: scale(1.1);
+
+}
+
+.t-part :hover{
+    color:#ffa800
+}
+/* 
+.txt{
+    display: none;
+}
+.txt:hover{
+    display: block;
+} */

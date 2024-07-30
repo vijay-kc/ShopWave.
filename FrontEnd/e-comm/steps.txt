@@ -1,0 +1,36 @@
+create react app(npx create-react-app .)
+install mui (npm install @mui/material @emotion/react @emotion/styled)
+install mui icon (npm install @mui/icons-material @mui/material @emotion/styled @emotion/react)
+install tailwind css (npm install -D tailwindcss  npx tailwindcss init)
+add component from tailwind 
+install heroicons ( npm i @heroicons/react)
+install headlessui (npm i @headlessui/react)
+
+
+salesData.map((item, index) => {
+            <Grid item xs={12} sm={3} key={index}>
+                <Box sx={{
+                    display: "flex",
+                    alignItems: 'center',
+    
+                }}>
+                    <Avatar variant='rounded' sx={{
+                        mr: 3,
+                        width: 44,
+                        height: 44,
+                        boxShadow: 3,
+                        color: "white",
+                        background: `${item.color}`
+                    }}>
+                        {item.icon}
+                    </Avatar>
+                    <Box sx={{ display: "flex", flexDirection: 'column' }}>
+                        <Typography variant='caption'>
+                            {item.title}
+                        </Typography>
+                        <Typography variant='h6'>{item.state}</Typography>
+    
+                    </Box>
+                </Box>
+            </Grid>
+        })

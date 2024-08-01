@@ -27,16 +27,7 @@
       { "src": "/api/reviews/(.*)", "dest": "/src/routes/review.routes.js" },
       { "src": "/api/ratings/(.*)", "dest": "/src/routes/rating.routes.js" },
       { "src": "/api/payments/(.*)", "dest": "/src/routes/payment.routes.js" }
-    ],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          { "key": "Access-Control-Allow-Origin", "value": "*" },
-          { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
-          { "key": "Access-Control-Allow-Headers", "value": "X-Requested-With, Content-Type, Authorization" }
-        ]
-      }
     ]
+   
   }
   

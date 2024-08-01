@@ -25,7 +25,7 @@ import { NavigationData } from "./NavigationData.js";
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo from '../../../assets/Logo.png'
+import logo from '../../../assets/1.png'
 import AuthModal from "../../Auth/AuthModal.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser,logout } from "../../../State/Auth/Action.js";

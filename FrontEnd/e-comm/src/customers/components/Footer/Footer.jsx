@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography, Button, Box, Avatar } from "@mui/material";
-import co from '../../../assets/Logo.png';
+import co from '../../../assets/1.png';
 import logo from '../../../assets/payment-method.svg'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';

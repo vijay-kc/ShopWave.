@@ -1,9 +1,7 @@
-
- {
+{
     "version": 2,
-    
     "builds": [
-      { "src": "src/index.js", "use": "@vercel/node" }, 
+      { "src": "src/index.js", "use": "@vercel/node" },
       { "src": "src/routes/auth.route.js", "use": "@vercel/node" },
       { "src": "src/routes/user.route.js", "use": "@vercel/node" },
       { "src": "src/routes/product.routes.js", "use": "@vercel/node" },
@@ -17,18 +15,28 @@
       { "src": "src/routes/payment.routes.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/src/index.js" },
-      { "src": "/auth(.*)", "dest": "/src/routes/auth.route.js" },
-      { "src": "/api/user(.*)", "dest": "/src/routes/user.route.js" },
-      { "src": "/api/products(.*)", "dest": "/src/routes/product.routes.js" },
-      { "src": "/api/admin/products(.*)", "dest": "/src/routes/adminProduct.routes.js" },
-      { "src": "/api/cart(.*)", "dest": "/src/routes/cart.routes.js" },
-      { "src": "/api/cart_items(.*)", "dest": "/src/routes/cartItem.routes.js" },
-      { "src": "/api/orders(.*)", "dest": "/src/routes/order.routes.js" },
-      { "src": "/api/admin/orders(.*)", "dest": "/src/routes/adminOrder.routes.js" },
-      { "src": "/api/reviews(.*)", "dest": "/src/routes/review.routes.js" },
-      { "src": "/api/ratings(.*)", "dest": "/src/routes/rating.routes.js" },
-      { "src": "/api/payments(.*)", "dest": "/src/routes/payment.routes.js" }
+      { "src": "/", "dest": "/src/index.js" },
+      { "src": "/auth/(.*)", "dest": "/src/routes/auth.route.js" },
+      { "src": "/api/user/(.*)", "dest": "/src/routes/user.route.js" },
+      { "src": "/api/products/(.*)", "dest": "/src/routes/product.routes.js" },
+      { "src": "/api/admin/products/(.*)", "dest": "/src/routes/adminProduct.routes.js" },
+      { "src": "/api/cart/(.*)", "dest": "/src/routes/cart.routes.js" },
+      { "src": "/api/cart_items/(.*)", "dest": "/src/routes/cartItem.routes.js" },
+      { "src": "/api/orders/(.*)", "dest": "/src/routes/order.routes.js" },
+      { "src": "/api/admin/orders/(.*)", "dest": "/src/routes/adminOrder.routes.js" },
+      { "src": "/api/reviews/(.*)", "dest": "/src/routes/review.routes.js" },
+      { "src": "/api/ratings/(.*)", "dest": "/src/routes/rating.routes.js" },
+      { "src": "/api/payments/(.*)", "dest": "/src/routes/payment.routes.js" }
+    ],
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          { "key": "Access-Control-Allow-Origin", "value": "*" },
+          { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
+          { "key": "Access-Control-Allow-Headers", "value": "X-Requested-With, Content-Type, Authorization" }
+        ]
+      }
     ]
   }
   

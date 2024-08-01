@@ -76,6 +76,7 @@ export default function Navigation() {
 
   useEffect(() => {
     if (jwt) {
+       dispatch(getCart())
       dispatch(getUser(jwt))
     }
 

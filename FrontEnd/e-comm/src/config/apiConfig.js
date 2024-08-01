@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const API_BASE_URL="https://vk-fashion-server.vercel.app/"
+export const API_BASE_URL="https://vkserver-production.up.railway.app"
 
 const jwt=localStorage.getItem("jwt")
 

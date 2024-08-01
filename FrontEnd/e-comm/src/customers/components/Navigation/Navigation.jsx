@@ -30,6 +30,7 @@ import AuthModal from "../../Auth/AuthModal.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser,logout } from "../../../State/Auth/Action.js";
 import { getOrderHistory } from "../../../State/Order/Action.js";
+import { getCart } from "../../../State/Cart/Action.js";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

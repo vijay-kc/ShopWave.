@@ -4,16 +4,7 @@ const cors=require("cors");
 
 const app = express();
 
-app.use(express.json());
-const corsOptions = {
-  origin: 'https://vk-fashion.vercel.app', // Replace with your frontend origin
-  methods: 'GET,POST,PUT,PATCH,DELETE,OPTIONS', // Specify allowed methods
-  allowedHeaders: 'Content-Type,Authorization', // Specify allowed headers
-  credentials: true, // Allow credentials (cookies, auth headers)
-  optionsSuccessStatus: 200 // Some browsers choke on 204
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get("/",(req,res)=>{
     return res.status(200).send({massage:"welcome to e-commerce api-node",status:true});
